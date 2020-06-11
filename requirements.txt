@@ -1,0 +1,3 @@
+datarobot==2.20.2
+Flask==1.1.2
+gunicorn==20.0.4

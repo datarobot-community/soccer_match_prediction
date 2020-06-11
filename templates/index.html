@@ -1,0 +1,64 @@
+<head>
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+        crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+</head>
+<body>
+<h1>Predict Match outcomes!</h1>
+<form method="GET">
+    <select class='select2' name="team1">
+        {% for team in teams %}
+            {% if team == team1 %}
+                <option selected="selected" value="{{team}}">{{team}}</option>
+            {% else %}
+                <option value="{{team}}">{{team}}</option>
+            {% endif %}
+        {% endfor %}
+    </select> 
+    <select class='select2' name="team2">
+        {% for team in teams %}
+            {% if team == team2 %}
+                <option selected="selected" value="{{team}}">{{team}}</option>
+            {% else %}
+                <option value="{{team}}">{{team}}</option>
+            {% endif %}
+        {% endfor %}
+    </select> 
+    <select class='select2' name="league">
+        {% for opt_league in leagues %}
+            {% if opt_league == league %}
+                <option selected="selected" value="{{opt_league}}">{{opt_league}}</option>
+            {% else %}
+                <option value="{{opt_league}}">{{opt_league}}</option>
+            {% endif %}
+        {% endfor %}
+    </select> 
+
+    <br>
+    <input type="submit" value="Find out!">
+</form>
+
+<br>
+<h2>Score</h2>
+<h3>
+    {% if score1 != None %}
+         ({{ team1 }}) {{ score1 }}
+    {% else %}
+        ?
+    {% endif %}
+    -
+    {% if score2 != None %}
+        {{ score2 }} ({{ team2 }})
+    {% else %}
+        ?
+    {% endif %}
+</h3>
+<script>
+    $(document).ready(function() {
+        $('.select2').select2();
+    });
+</script>
+</body>
