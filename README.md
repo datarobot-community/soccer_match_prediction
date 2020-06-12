@@ -1,12 +1,8 @@
-# soccer_match_prediction
-Required materials for following along with the Soccer Match Predictor tutorial
 # Soccer Match Prediction
 
-Required materials for following along with the Soccer Match Predictor tutorial
+Required materials for following along with the Soccer Match Predictor tutorial.
 
-## Usage
-
-TODO
+The tutorial is located at the following link: https://api-docs.datarobot.com/docs/soccer-match-prediction
 
 ## Development and Contributing
 
