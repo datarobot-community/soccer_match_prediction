@@ -119,7 +119,7 @@ TEAMS = {
     'Basel': 65.38,
     'Lokomotiv Moscow': 65.26,
     'Levante': 64.99,
-    'Dynamo Kiev': 64.82,
+    'Dynamo Kyiv': 64.82,
     'Bologna': 64.78,
     'Aston Villa': 64.76,
     'Besiktas': 64.76,
