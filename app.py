@@ -1,7 +1,6 @@
 import os
 import requests
 import json
-import datarobot as dr
 from flask import Flask, render_template, request
 from datetime import datetime
 
@@ -13,11 +12,8 @@ DEPLOYMENT_SERVER_URL = os.getenv("DATAROBOT_DEPLOYMENT_SERVER_URL")
 DEPLOYMENT_ID = os.getenv("DATAROBOT_DEPLOYMENT_ID")
 PREDICTION_HEADERS = {
     "Authorization": "Bearer {}".format(API_KEY),
-    "Content-Type": "application/json",
-    "datarobot-key": SERVER_KEY,
+    "Content-Type": "application/json"
 }
-
-dr.Client(token=API_KEY, endpoint='https://app.datarobot.com/api/v2')
 
 app = Flask(__name__)
 
@@ -59,7 +55,7 @@ def root():
             }
         ]
         predictions = requests.post(
-            "{server_url}/predApi/v1.0/deployments/{deployment_id}/predictions".format(server_url=DEPLOYMENT_SERVER_URL, deployment_id=DEPLOYMENT_ID),
+            "{server_url}/api/v2/deployments/{deployment_id}/predictions".format(server_url=DEPLOYMENT_SERVER_URL, deployment_id=DEPLOYMENT_ID),
             headers=PREDICTION_HEADERS,
             data=json.dumps(matches),
         )
