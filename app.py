@@ -7,7 +7,6 @@ from datetime import datetime
 from constants import TEAMS, LEAGUES
 
 API_KEY = os.getenv("DATAROBOT_API_KEY")
-SERVER_KEY = os.getenv("DATAROBOT_SERVER_KEY")
 DEPLOYMENT_SERVER_URL = os.getenv("DATAROBOT_DEPLOYMENT_SERVER_URL")
 DEPLOYMENT_ID = os.getenv("DATAROBOT_DEPLOYMENT_ID")
 PREDICTION_HEADERS = {
